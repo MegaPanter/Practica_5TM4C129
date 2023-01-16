@@ -8,8 +8,8 @@
 #ifndef PWM_PWM_H_
 #define PWM_PWM_H_
 
-extern void Configura_Reg_PWM1(uint16_t freq);
-
+extern void Configura_Reg_PWM1(volatile uint16_t freq);
+ extern void delayms(int i);
 
 
 #endif /* PWM_PWM_H_ */
