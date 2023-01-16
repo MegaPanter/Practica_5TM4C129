@@ -12,23 +12,19 @@ int main(void)
     Configurar_PLL();  //Confiuracion de velocidad de reloj
     Configura_Reg_ADC0();
     Configurar_UART0();
-    Configura_Reg_PWM1(1250);//Configuro a 1khz el pwm
+    Configura_Reg_PWM1(50);//Configuro a 1khz el pwm
+
+
     while(1)
     {
          //llamada a la conversion por procesador
-       for(x=159;x>=1;x--)
-       {
-        PWM0->_1_CMPA = (x*100);
-        delayms(20);
-       }
-       for(x=1;x<=159;x--)
-       {
-         PWM0->_1_CMPA = x*100;
-         delayms(20);
-       }
-       delayms(50);
-
-
-}
+     
+       
+    ADC0_InSeq2(Result,duty);
+        PWM0->_1_CMPA = duty[0];
+                delayms(150000);
+      
+       
 }
 
+}

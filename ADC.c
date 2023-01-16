@@ -56,8 +56,8 @@ extern void ADC0_InSeq2(uint16_t *Result,uint16_t *duty){
        while((ADC0->RIS&0x04)==0){}; // espera al convertidor
        Result[1] = ADC0->SSFIFO2&0xFFF; //  Leer  el resultado almacenado en la pila2
        Result[0] = ADC0->SSFIFO2&0xFFF;
-       duty[0] =(Result[0]*37500)/4096;
-       duty[1] = (Result[1]*25000)/4096;
+       duty[0] =(Result[0]*1250)/4096;
+       duty[1] = (Result[1]*1250*3.3)/4096;
        ADC0->ISC = 0x0004;  //Conversion finalizada
 
 }
