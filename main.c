@@ -21,8 +21,8 @@ int main(void)
      
        
     ADC0_InSeq2(Result,duty);
-        PWM0->_1_CMPA = duty[0];
-                delayms(150000);
+        PWM0->_1_CMPA = duty[1];
+                
       
        
 }
