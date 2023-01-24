@@ -13,7 +13,7 @@ extern void Configura_Reg_PWM1(volatile uint16_t freq)
     //PWM0->_0_CTL = (0<<0);
     PWM0->_1_CTL = (0<<0); /*Bloqueo y desbloqueo*/
     //CONFIG PWM0 GENERADOR 1A//////////////////////////////////////
-    PWM0->_1_GENA |= (0X3<<2)|(0X2<<6)|(0x1<<0); /*Registro de las acciones del pwm Pag 1282*/
+    PWM0->_1_GENA |= (0X2<<2)|(0X3<<6)|(0x0<<0); /*Registro de las acciones del pwm Pag 1282*/
     PWM0->_1_LOAD = 62500;/*cuentas=fclk/fpwm  para 1khz cuentas = (16,000,000/1000)*/
     PWM0->_1_CMPB = 2500;
     PWM0->_1_CMPA = 57813;
@@ -21,11 +21,11 @@ extern void Configura_Reg_PWM1(volatile uint16_t freq)
     //////////////////////////////////////////////////////////////////
     
     //CONFIG PWM0 GENERADOR 1B//////////////////////////////////////
-    PWM0->_1_GENB |= (0X3<<2)|(0X2<<6)|(0x1<<0);
+    PWM0->_1_GENB |= (0X2<<2)|(0X3<<10)|(0x0<<0);
     PWM0->_1_CTL = (1<<0)|(0<<1); 
    //CONFIG PWM0 GENERADOR 0B//////////////////////////////////////
     PWM0->_0_CTL = (0<<0);
-    PWM0->_0_GENB |= (0X3<<2)|(0X2<<6)|(0x1<<0);
+    PWM0->_0_GENB |= (0X2<<2)|(0X3<<6)|(0x0<<0);
     PWM0->_0_LOAD = 62500;/*cuentas=fclk/fpwm  para 1khz cuentas = (16,000,000/1000)*/
     PWM0->_0_CMPB = 2500;
     PWM0->_0_CMPA = 57813;
