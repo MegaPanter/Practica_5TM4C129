@@ -12,15 +12,15 @@
 // fin  = fxtal / [(Q+1) * (N+1)]
 //      = 25MHz / [(0+1) * (4+1)] = 5MHz
 // fvoc = fin * MDIV
-//      = 5MHz * 80.00 = 400MHz
+//      = 5MHz * 96.00 = 480MHz
 // fsyclk = fvco / (PSYSDIV + 1)
 //        = 480 / (3 + 1 ) = 120MHz
 
-#define MINT    80
+#define MINT    96
 #define MFRAC   0
 #define N       4
 #define Q       0
-#define PSYSDIV 7
+#define PSYSDIV 23
 
 #define FBCHT   0x6
 #define EBCHT   0x6
